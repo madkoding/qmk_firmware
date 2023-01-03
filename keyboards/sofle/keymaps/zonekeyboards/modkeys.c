@@ -6,13 +6,6 @@ uint8_t MOUSE_BUTTONS;
 uint8_t mod_state;
 bool    key_registered;
 
-const qk_ucis_symbol_t ucis_symbol_table[] = UCIS_TABLE(
-    UCIS_SYM("poop", 0x1F4A9),               // 💩
-    UCIS_SYM("rofl", 0x1F923),               // 🤣
-    UCIS_SYM("cuba", 0x1F1E8, 0x1F1FA),      // 🇨🇺
-    UCIS_SYM("look", 0x0CA0, 0x005F, 0x0CA0) // ಠ_ಠ
-);
-
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case SYMB:
@@ -35,6 +28,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
+        case EMOJI:
+            if (record->event.pressed) {
+                layer_on(_EMOJI);
+                update_tri_layer(_SYMB, _NUMP, _TUNE);
+            } else {
+                layer_off(_EMOJI);
+                update_tri_layer(_SYMB, _NUMP, _TUNE);
+            }
+            return false;
+
         case KC_MOUSE_BTN1:
             if (record->event.pressed) {
                 MOUSE_BUTTONS |= (1 << 0);
@@ -51,12 +54,69 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-        case KC_UCIS:
+        case UC_FLIP:
             if (record->event.pressed) {
-                qk_ucis_start(); // or whatever it is called
+                send_unicode_string("(ノಠ痊ಠ)ノ彡┻━┻");
             }
-            return true; // we dont want QMK to handle a custom keycode, will only make the program slower and nothing else is gonna be run
+            break;
 
+        case UC_TABL:
+            if (record->event.pressed) {
+                send_unicode_string("┬─┬ノ( º _ ºノ)");
+            }
+            break;
+
+        case UC_SHRG:
+            if (record->event.pressed) {
+                send_unicode_string("¯\\_(ツ)_/¯");
+            }
+            break;
+
+        case UC_DISA:
+            if (record->event.pressed) {
+                send_unicode_string("ಠ_ಠ");
+            }
+            break;
+        case UC_LOL:
+            if (record->event.pressed) {
+                send_unicode_string("😂");
+            }
+            break;
+        case UC_HAND:
+            if (record->event.pressed) {
+                send_unicode_string("🙌");
+            }
+            break;
+        case UC_XP:
+            if (record->event.pressed) {
+                send_unicode_string("😝");
+            }
+            break;
+        case UC_XD:
+            if (record->event.pressed) {
+                send_unicode_string("😆");
+            }
+            break;
+        case UC_LUV:
+            if (record->event.pressed) {
+                send_unicode_string("😍");
+            }
+            break;
+        case UC_SAD:
+            if (record->event.pressed) {
+                send_unicode_string("😢");
+            }
+            break;
+        case UC_CRY:
+            if (record->event.pressed) {
+                send_unicode_string("😭");
+            }
+            break;
+        case UC_RED:
+            if (record->event.pressed) {
+                send_unicode_string("🚩");
+            }
+            break;
     }
     return true; // other keycodes are still processed by QMK
 }
