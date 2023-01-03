@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,   KC_Q,   KC_W,   KC_E,  KC_R,  KC_T,                   KC_Y, KC_U, KC_I, KC_O, KC_P, KC_ENT,
         KC_LSFT,  KC_A,   KC_S,   KC_D,  KC_F,  KC_G,                   KC_H, KC_J, KC_K, KC_L, ES_NTIL, KC_RSFT,
         KC_LCTL, KC_Z,   KC_X,   KC_C,  KC_V,  KC_B, KC_MUTE, XXXXXXX, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, ES_QUOT,
-                    KC_LALT,  KC_LGUI,ES_LBRC,SYMB,  KC_SPC,      KC_SPC, NUMP, ES_RBRC, KC_RGUI, KC_RALT
+                    KC_LALT,  KC_LGUI,EMOJI,SYMB,  KC_SPC,      KC_SPC, NUMP, EMOJI, KC_RGUI, KC_RALT
     ),
 
     /* _NUMP
@@ -68,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,----------------------------------------.                      ,-----------------------------------------.
      * |      |   |  |  @   |  #   |  ~   | %    |                     |   6  |   7  |   8  |   9  |   0  |  `   |
      * |------+------+------+------+------+------|                     |------+------+------+------+------+------|
-     * |      |  ´   |  `   |      |      | UCIS |                     |  &   | HOME | UP   | END  |PGUP  |BKSPCK|
+     * |      |  ´   |  `   |      |      |      |                     |  &   | HOME | UP   | END  |PGUP  |BKSPCK|
      * |------+------+------+------+------+------|                     |------+------+------+------+------+------|
      * |      |  {   |  }   |  [   |  ]   |  \   |-------.     ,-------|  |   | LEFT | DOWN |RIGHT |PGDOWN|      |
      * |------+------+------+------+------+------|  MUTE |     |       |------+------+------+------+------+------|
@@ -80,10 +80,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [_SYMB] = LAYOUT(
         _______, ES_PIPE, ES_AT, ES_HASH, ES_TILD, KC_PERC,             _______, _______, _______, _______, _______, _______,
-        _______, ES_ACUT, ES_GRV, _______, _______, KC_UCIS,           KC_AMPR, KC_HOME, KC_UP, KC_END, KC_PGUP, _______,
+        _______, ES_ACUT, ES_GRV, _______, _______, _______,           KC_AMPR, KC_HOME, KC_UP, KC_END, KC_PGUP, _______,
         _______, ES_LCBR, ES_RCBR, ES_LBRC, ES_RBRC, KC_BSLS,           LSFT(KC_BSLS), KC_LEFT, KC_DOWN, KC_RIGHT, KC_PGDN, _______,
         _______, ES_LPRN, ES_RPRN, ES_LABK, ES_RABK, KC_PSCR, _______, XXXXXXX, KC_EQUAL, ALGR(KC_QUOTE), XXXXXXX, ALGR(KC_BSLS), KC_TILDE, _______,
                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    ),
+
+    /* _NUMP
+     * ,-----------------------------------------.                     ,-----------------------------------------.
+     * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |                     |  F7  |  F8  |  F9  |  F10  | F11  | F12 |
+     * |------+------+------+------+------+------|                     |------+------+------+------+------+------|
+     * |   -  |   +  |  7   |   8  |  9   |  ,   |                     |  >   | HOME |   UP |  END |      |ENTER |
+     * |------+------+------+------+------+------|                     |------+------+------+------+------+------|
+     * |  /   |   *  |  4   |   5  |  6   |  .   |-------.     ,-------|  <   |LEFT  | DOWN | RIGHT|      |      |
+     * |------+------+------+------+------+------|  MUTE |     |       |------+------+------+------+------+------|
+     * |  ^   |   =  |  1   |   2  |  3   |  0   |-------|     |-------|MSBTN1|MSBTN2|  (   |   )  |      |      |
+     * `-----------------------------------------/       /      \      \-----------------------------------------'
+     *            | LALT | LGUI |  [   | SYMB | / SPACE /        \SPACE \  |NUMP  |   ]  | RGUI | RALT |
+     *            |      |      |      |      |/       /          \      \ |      |      |      |      |
+     *            `-----------------------------------'            '------''---------------------------'
+     */
+    [_EMOJI] = LAYOUT(
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, UC_FLIP, UC_TABL, UC_SHRG, UC_DISA, UC_RED,           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, UC_LOL,  UC_HAND, UC_XP,   UC_XD,   UC_LUV,           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, UC_SAD, UC_CRY, XXXXXXX, XXXXXXX, XXXXXXX,XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
     ),
 
     /* _TUNE

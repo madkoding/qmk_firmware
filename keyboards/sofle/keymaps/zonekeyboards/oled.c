@@ -3,6 +3,7 @@
 #include <string.h>
 #include "lib/lib8tion/lib8tion.h"
 #include "handlers.c"
+
 char wpm_str[4];
 
 static void print_status_narrow(void) {
@@ -30,6 +31,9 @@ static void print_status_narrow(void) {
             break;
         case _TUNE:
             oled_write_ln_P(PSTR("Tune\n\n"), false);
+            break;
+        case _EMOJI:
+            oled_write_ln_P(PSTR("Emoji\n\n"), false);
             break;
         default:
             oled_write_ln_P(PSTR("Undef\n"), false);
