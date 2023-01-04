@@ -20,6 +20,7 @@
 
 // ws2812 RGB LED
 #define RGBLIGHT_SLEEP
+#define RGBLIGHT_TIMEOUT 30000  // 30 seconds
 #define RGBLIGHT_LAYERS
 #define RGB_DI_PIN D3
 
