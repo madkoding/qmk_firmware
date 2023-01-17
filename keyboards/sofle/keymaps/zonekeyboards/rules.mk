@@ -11,10 +11,14 @@ NKRO_ENABLE = no            # Nkey Rollover - if this doesn't work, see here: ht
 BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 MIDI_ENABLE = no            # MIDI controls
 AUDIO_ENABLE = no           # Audio output on port C6
-UNICODE_ENABLE = yes        # Unicode
+UNICODE_ENABLE = no        # Unicode
+UNICODEMAP_ENABLE = yes
 BLUETOOTH_ENABLE = no       # Enable Bluetooth with the Adafruit EZ-Key HID
-RGBLIGHT_ENABLE = yes        # Enable WS2812 RGB underlight.
+# RGBLIGHT_ENABLE = no        # Enable WS2812 RGB underlight.
 SWAP_HANDS_ENABLE = no      # Enable one-hand typing
+
+RGB_MATRIX_ENABLE = yes
+RGB_MATRIX_DRIVER = WS2812
 
 #Debug options
 VERBOSE = no
@@ -22,9 +26,7 @@ CONSOLE_ENABLE = no
 COMMAND_ENABLE = no
 
 LTO_ENABLE = yes
-
 SPLIT_KEYBOARD = yes
-
 # VIA_ENABLE = yes
 
 POINTING_DEVICE_ENABLE = yes

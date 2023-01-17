@@ -8,33 +8,43 @@ bool    key_registered;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case SYMB:
+        case DOWN:
             if (record->event.pressed) {
-                layer_on(_SYMB);
-                update_tri_layer(_SYMB, _NUMP, _TUNE);
+                layer_on(_DOWN);
+                update_tri_layer(_DOWN, _UP, _TUNE);
             } else {
-                layer_off(_SYMB);
-                update_tri_layer(_SYMB, _NUMP, _TUNE);
+                layer_off(_DOWN);
+                update_tri_layer(_DOWN, _UP, _TUNE);
             }
             return false;
 
-        case NUMP:
+        case UP:
             if (record->event.pressed) {
-                layer_on(_NUMP);
-                update_tri_layer(_SYMB, _NUMP, _TUNE);
+                layer_on(_UP);
+                update_tri_layer(_DOWN, _UP, _TUNE);
             } else {
-                layer_off(_NUMP);
-                update_tri_layer(_SYMB, _NUMP, _TUNE);
+                layer_off(_UP);
+                update_tri_layer(_DOWN, _UP, _TUNE);
             }
             return false;
 
-        case EMOJI:
+        case LEFT:
             if (record->event.pressed) {
-                layer_on(_EMOJI);
-                update_tri_layer(_SYMB, _NUMP, _TUNE);
+                layer_on(_LEFT);
+                update_tri_layer(_DOWN, _UP, _TUNE);
             } else {
-                layer_off(_EMOJI);
-                update_tri_layer(_SYMB, _NUMP, _TUNE);
+                layer_off(_LEFT);
+                update_tri_layer(_DOWN, _UP, _TUNE);
+            }
+            return false;
+
+        case RIGHT:
+            if (record->event.pressed) {
+                layer_on(_RIGHT);
+                update_tri_layer(_DOWN, _UP, _TUNE);
+            } else {
+                layer_off(_RIGHT);
+                update_tri_layer(_DOWN, _UP, _TUNE);
             }
             return false;
 
@@ -54,69 +64,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-        case UC_FLIP:
-            if (record->event.pressed) {
-                send_unicode_string("(ノಠ痊ಠ)ノ彡┻━┻");
-            }
-            break;
-
-        case UC_TABL:
-            if (record->event.pressed) {
-                send_unicode_string("┬─┬ノ( º _ ºノ)");
-            }
-            break;
-
-        case UC_SHRG:
-            if (record->event.pressed) {
-                send_unicode_string("¯\\_(ツ)_/¯");
-            }
-            break;
-
-        case UC_DISA:
-            if (record->event.pressed) {
-                send_unicode_string("ಠ_ಠ");
-            }
-            break;
-        case UC_LOL:
-            if (record->event.pressed) {
-                send_unicode_string("😂");
-            }
-            break;
-        case UC_HAND:
-            if (record->event.pressed) {
-                send_unicode_string("🙌");
-            }
-            break;
-        case UC_XP:
-            if (record->event.pressed) {
-                send_unicode_string("😝");
-            }
-            break;
-        case UC_XD:
-            if (record->event.pressed) {
-                send_unicode_string("😆");
-            }
-            break;
-        case UC_LUV:
-            if (record->event.pressed) {
-                send_unicode_string("😍");
-            }
-            break;
-        case UC_SAD:
-            if (record->event.pressed) {
-                send_unicode_string("😢");
-            }
-            break;
-        case UC_CRY:
-            if (record->event.pressed) {
-                send_unicode_string("😭");
-            }
-            break;
-        case UC_RED:
-            if (record->event.pressed) {
-                send_unicode_string("🚩");
-            }
-            break;
     }
     return true; // other keycodes are still processed by QMK
 }
