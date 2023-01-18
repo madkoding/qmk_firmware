@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------|                     |------+------+------+------+------+------|
      * |      |      |      |      |      |      |-------.     ,-------|      |      | LEFT | DOWN | RIGHT|  +   |
      * |------+------+------+------+------+------|  MUTE |     |       |------+------+------+------+------+------|
-     * |      |      |      |      |      |      |-------|     |-------|MSBTN1|MSBTN2|  (   |   )  |   _  |      |
+     * |      |      |      |      |      |      |-------|     |-------|MSBTN1|MSBTN2|      |      |      |      |
      * `-----------------------------------------/       /      \      \-----------------------------------------'
      *            | LCTRL| LGUI |EMOJI | SYMB | / SPACE /        \SPACE \  |NUMP  |EMOJI | RGUI | RALT |
      *            |      |      |      |      |/       /          \      \ |      |      |      |      |
@@ -48,30 +48,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_UP] = LAYOUT(
         KC_F12, KC_F1,  KC_F2,   KC_F3, KC_F4, KC_F5,                    KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11,
         _______,XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX,   XXXXXXX,                XXXXXXX, XXXXXXX,KC_HOME, KC_UP, KC_END, _______,
-        _______,XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX,   XXXXXXX,                 XXXXXXX, XXXXXXX,KC_LEFT, KC_DOWN, KC_RIGHT, KC_PLUS,
-        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,     _______, KC_MS_BTN1, KC_MS_BTN2, LSFT(KC_9), LSFT(KC_0), LSFT(KC_MINS), _______,
+        _______,XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX,   XXXXXXX,                 XXXXXXX, XXXXXXX,KC_LEFT, KC_DOWN, KC_RIGHT, XXXXXXX,
+        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,     _______, KC_MS_BTN1, KC_MS_BTN2, XXXXXXX, XXXXXXX, XXXXXXX, _______,
                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
     /* _DOWN
      * ,----------------------------------------.                      ,-----------------------------------------.
-     * |   ª  |   |  |  @   |  #   |  $   | %    |                     |      |      |      |      |      |      |
+     * |   ª  |   |  |  @   |  #   |  ~   | %    |                     |      |      |      |      |      |      |
      * |------+------+------+------+------+------|                     |------+------+------+------+------+------|
      * |      |  ´   |  `   |  ^   |      |      |                     |      |      | HOME |  UP  | END  |ENTER |
      * |------+------+------+------+------+------|                     |------+------+------+------+------+------|
-     * |      |      |      |      |      |      |-------.     ,-------|      |      | LEFT | DOWN | RIGHT|  *   |
+     * |      |      |      |      |      |      |-------.     ,-------|      |      | LEFT | DOWN | RIGHT|      |
      * |------+------+------+------+------+------|  MUTE |     |       |------+------+------+------+------+------|
-     * |      |      |      |      |      |PCREEN|-------|     |-------|      |      |  [   |  ]   |  ~   |      |
+     * |      |  +   |  -   |  *   |  =   |PCREEN|-------|     |-------|      |      |      |      |   \  |      |
      * `-----------------------------------------/       /      \      \-----------------------------------------'
      *            | RCTL | LGUI |EMOJI | SYMB | / SPACE /        \SPACE \  |NUMP  |EMOJI | RGUI | RALT |
      *            |      |      |      |      |/       /          \      \ |      |      |      |      |
      *            `-----------------------------------'            '------''---------------------------'
      */
     [_DOWN] = LAYOUT(
-        KC_MINS, KC_PIPE, KC_AT, KC_HASH, KC_DLR, KC_PERC,             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,  _______,
+        KC_MINS, KC_PIPE, KC_AT, KC_HASH, KC_TILDE, KC_PERC,             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,  _______,
         _______, KC_QUOT, KC_GRV, KC_CIRC, XXXXXXX, XXXXXXX,           XXXXXXX,XXXXXXX, KC_HOME, KC_UP,   KC_END,  _______,
-        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          _______,_______, KC_LEFT, KC_DOWN, KC_RIGHT, KC_ASTR,
-        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PSCR, _______, _______, _______, _______, KC_LBRC, KC_RBRC, KC_TILDE, _______,
+        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          _______,_______, KC_LEFT, KC_DOWN, KC_RIGHT, XXXXXXX,
+        _______, KC_PLUS, KC_MINS, KC_ASTR, KC_EQL, KC_PSCR, _______, _______, _______, _______, XXXXXXX, XXXXXXX, KC_BSLS, _______,
                 KC_RCTL, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
@@ -81,9 +81,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------|                     |------+------+------+------+------+------|
      * |      |      |      |      |      |      |                     |      |      |      |      |      |      |
      * |------+------+------+------+------+------|                     |------+------+------+------+------+------|
-     * |      |      |      |      |      |      |-------.     ,-------|      |      |      |      |      |  =   |
+     * |      |      |      |      |      |      |-------.     ,-------|      |      |      |      |      |      |
      * |------+------+------+------+------+------|       |     |       |------+------+------+------+------+------|
-     * |      |      |      |      |      |      |-------|     |-------|      |      |  <   |  >   |      |      |
+     * |      |      |      |      |      |      |-------|     |-------|      |      |      |      |      |      |
      * `-----------------------------------------/       /      \      \-----------------------------------------'
      *            | LCTL | LGUI |EMOJI | SYMB | / SPACE /        \SPACE \  |NUMP  |EMOJI | RGUI | RALT |
      *            |      |      |      |      |/       /          \      \ |      |      |      |      |
@@ -92,30 +92,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_LEFT] = LAYOUT(
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_EQL,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LABK, KC_RABK, XXXXXXX, XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
     /* _RIGHT
      * ,-----------------------------------------.                     ,-----------------------------------------.
-     * |      |      |      |      |      |      |                     |      |      |      |      |      |      |
+     * |      |      |      |      |      |      |                     |      |      |      |  [   |  ]   |      |
      * |------+------+------+------+------+------|                     |------+------+------+------+------+------|
      * |      |      |      |  é   |      |      |                     |      |  ú   |  í   |  ó   |      |      |
      * |------+------+------+------+------+------|                     |------+------+------+------+------+------|
-     * |      |  á   |      |      |      |      |-------.     ,-------|      |      |      |      |      |  -   |
+     * |      |  á   |      |      |      |      |-------.     ,-------|      |      |      |      |      |      |
      * |------+------+------+------+------+------|       |     |       |------+------+------+------+------+------|
-     * |      |      |      |      |      |      |-------|     |-------|   ñ  |      |  {   |  }   |   \  |      |
+     * |      |      |      |      |      |      |-------|     |-------|   ñ  |      |  {   |  }   |   _  |      |
      * `-----------------------------------------/       /      \      \-----------------------------------------'
      *            | LCTL | LGUI |EMOJI | SYMB | / SPACE /        \SPACE \  |NUMP  |EMOJI | RGUI | RALT |
      *            |      |      |      |      |/       /          \      \ |      |      |      |      |
      *            `-----------------------------------'            '------''---------------------------'
      */
     [_RIGHT] = LAYOUT(
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,           XXXXXXX, XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, XXXXXXX,
         XXXXXXX, XXXXXXX, XXXXXXX, XP(ECUTELOW,ECUTE), XXXXXXX, XXXXXXX,           XXXXXXX, XP(UCUTELOW,UCUTE), XP(ICUTELOW,ICUTE), XP(OCUTELOW,OCUTE), XXXXXXX, XXXXXXX,
-        XXXXXXX, XP(ACUTELOW,ACUTE) , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_MINS,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,XXXXXXX, XXXXXXX, XP(ENIELOW,ENIE), XXXXXXX, KC_LCBR, KC_RCBR, KC_BSLS, XXXXXXX,
+        XXXXXXX, XP(ACUTELOW,ACUTE) , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,XXXXXXX, XXXXXXX, XP(ENIELOW,ENIE), XXXXXXX, KC_LCBR, KC_RCBR, LSFT(KC_MINUS), XXXXXXX,
                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 

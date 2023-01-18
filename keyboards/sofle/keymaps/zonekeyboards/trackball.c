@@ -7,7 +7,7 @@ uint16_t trackball_led_timer;
 
 layer_state_t layer_state_set_user(layer_state_t state) {
     state = update_tri_layer_state(state, _UP, _DOWN, _TUNE);
-    switch (biton32(state)) {
+    switch (get_highest_layer(layer_state)) {
         case _UP:
             pimoroni_trackball_set_rgbw(255, 0, 0, 0.5);
             break;
