@@ -20,7 +20,7 @@
 
 #ifndef POINTING_DEVICE_ENABLE
 #    define SPLIT_WATCHDOG_ENABLE
-#    define POINTING_DEVICE_ROTATION_180
+//#    define POINTING_DEVICE_ROTATION_180
 #    define POINTING_DEVICE_RIGHT
 #endif
 
@@ -46,14 +46,14 @@
 #    define RGB_MATRIX_VAL_STEP 8
 #    define RGB_MATRIX_SPD_STEP 10
 #    define RGB_MATRIX_SPLIT { 36, 36 }
-#    define RGB_MATRIX_TIMEOUT 120000
+#    define RGB_MATRIX_TIMEOUT 360000 // 360 seconds
 #    define RGB_DISABLE_WHEN_USB_SUSPENDED
 #endif
 
 // RGB Lights
 #ifdef RGBLIGHT_ENABLE
 // #define RGBLIGHT_SLEEP
-// #define RGBLIGHT_TIMEOUT 120000 // 120 seconds
+// #define RGBLIGHT_TIMEOUT 360000 // 360 seconds
 #    define RGBLIGHT_LAYERS
 #    undef RGBLED_NUM
 #    define RGBLED_NUM 70

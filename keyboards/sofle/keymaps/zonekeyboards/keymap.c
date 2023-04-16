@@ -57,9 +57,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,----------------------------------------.                      ,-----------------------------------------.
      * |   ª  |   |  |  @   |  #   |  ~   | %    |                     |      |      |      |      |      |      |
      * |------+------+------+------+------+------|                     |------+------+------+------+------+------|
-     * |      |  ´   |  `   |  ^   |      |      |                     |      |      | HOME |  UP  | END  |ENTER |
+     * |      |      |      |      |      |      |                     |      |      | HOME |  UP  | END  |ENTER |
      * |------+------+------+------+------+------|                     |------+------+------+------+------+------|
-     * |      |      |      |      |      |      |-------.     ,-------|      |      | LEFT | DOWN | RIGHT|      |
+     * |      |      |  `   |  ~   |  ^   |      |-------.     ,-------|      |      | LEFT | DOWN | RIGHT|      |
      * |------+------+------+------+------+------|  MUTE |     |       |------+------+------+------+------+------|
      * |      |  +   |  -   |  *   |  =   |PCREEN|-------|     |-------|      |      |      |      |   \  |      |
      * `-----------------------------------------/       /      \      \-----------------------------------------'
@@ -69,9 +69,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [_DOWN] = LAYOUT(
         KC_MINS, KC_PIPE, KC_AT, KC_HASH, KC_TILDE, KC_PERC,             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,  _______,
-        _______, KC_QUOT, KC_GRV, KC_CIRC, XXXXXXX, XXXXXXX,           XXXXXXX,XXXXXXX, KC_HOME, KC_UP,   KC_END,  _______,
-        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          _______,_______, KC_LEFT, KC_DOWN, KC_RIGHT, XXXXXXX,
-        _______, KC_PLUS, KC_MINS, KC_ASTR, KC_EQL, KC_PSCR, _______, _______, _______, _______, XXXXXXX, XXXXXXX, KC_BSLS, _______,
+        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,           XXXXXXX,XXXXXXX, KC_HOME, KC_UP,   KC_END,  _______,
+        _______, XXXXXXX, KC_GRV, KC_TILDE, KC_CIRC, XXXXXXX,          _______,_______, KC_LEFT, KC_DOWN, KC_RIGHT, XXXXXXX,
+        _______, KC_EQL, KC_ASTR, KC_MINS, KC_PLUS, KC_PSCR, _______, _______, _______, _______, XXXXXXX, XXXXXXX, KC_BSLS, _______,
                 KC_RCTL, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 

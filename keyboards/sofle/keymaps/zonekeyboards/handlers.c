@@ -1,4 +1,5 @@
 #pragma once
+#include <stdint.h>
 
 enum sofle_layers {
     _BASE,
@@ -7,7 +8,7 @@ enum sofle_layers {
     _LEFT,
     _RIGHT,
     _TUNE
-    };
+};
 
 enum custom_keycodes {
     DOWN = SAFE_RANGE,
@@ -17,14 +18,14 @@ enum custom_keycodes {
     OS,
     KC_MOUSE_BTN1,
     KC_MOUSE_BTN2
-        };
+};
 
 enum td_keycodes {
     ESCAPE,
     COMMAND,
     ALT,
     ESC_SYM
-        };
+};
 
 enum unicode_names {
     ENIE,
